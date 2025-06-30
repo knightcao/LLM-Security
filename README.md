@@ -88,7 +88,7 @@
 
 ## 3. AI安全数据集
 
-无论是构建AI安全防护措施还是评测AI安全防护效果，都需要一系列专业化的安全数据集支撑。当前已有公开安全数据集包括：XSTest/cite{}、OpenAI Mod/cite{}、HarmBench/cite{}、ToxicChat/cite{}、WILDGUARDMIX/cite{}、BeaverTails/cite{}、AEGIS2.0/cite{}等，但上述数据集完全基于英文，对中文防护支撑不足；2024年以来，Chinese SafetyQA/cite{}、SC-Safety/cite{}、CHiSafetyBench/cite{}等一系列中文大模型评测数据集发布，但上述数据集针对模型准确度，并不完全针对安全；2025年6月，电子标准院发布了XXX[]数据集，但主要针对评测，未考虑数据集用于模型训练，且数据主要由人为筛选和构建，并未针对性地由攻击算法生成或扩充。
+无论是构建AI安全防护措施还是评测AI安全防护效果，都需要一系列专业化的安全数据集支撑。当前已有公开安全数据集包括：XSTest/cite{}、OpenAI Mod/cite{}、HarmBench/cite{}、ToxicChat/cite{}、WILDGUARDMIX/cite{}、BeaverTails/cite{}、AEGIS2.0/cite{}等，但上述数据集完全基于英文，对中文防护支撑不足；2024年以来，Chinese SafetyQA/cite{}、SC-Safety/cite{}、CHiSafetyBench/cite{}等一系列中文大模型评测数据集发布，但上述数据集没有考虑通过人工智能越狱算法构建数据，但主要针对评测，未考虑数据集用于模型训练，且数据主要由人为筛选和构建，并未针对性地由攻击算法生成或扩充，导致了所构建的模型对算法攻击的防御效果有限。
 
 因此，我们提出了阡陌中文大模型安全数据集，作为补充，填补现有相关数据集不足。阡陌中文大模型安全数据集包含XXXXX条QA对，覆盖了假设类、注意力转移类、权限类方法导致生成内容合规类问题，
 
