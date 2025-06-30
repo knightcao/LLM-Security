@@ -73,76 +73,26 @@
 
 ### 2.3 提示注入攻击的生成算法
 
-* 重写攻击
+从诱导人工智能生成有害内容的技术措施来看，研究人员陆续提出了多种生成算法，并仍然在快速演进。比如有影响力的算法包括：重写攻击/cite{Andriushchenko2024}、PAIR/cite{Chao2025}、GCG/cite{Zou2023}、AutoDAN/cite{Li2024}、TAP、cite{Mehrotra2024}、Overload Attack/cite{Dong2024}、ArtPropmt/cite{Jiang2024}、 DeepInception/cite{Li2023}、GPT4-Cipher/cite{Shen2025}、SCAV/cite{Xu2024}、RandomSearch/cite{Andriushchenko2024}、ICA/cite{Wei2023}、Cold Attack/cite{Guo2024}、GPTFuzzer/cite{Yu2023}、ReNeLLM/cite{Ding2023}等，详见附件。
 
-[1] Andriushchenko, Maksym, and Nicolas Flammarion. "Does Refusal Training in LLMs Generalize to the Past Tense?." arXiv preprint arXiv:2407.11969 (2024).
+我们对上述攻击技术进行了总结：
 
-* PAIR
+| *Tab1. 主流提示注入算法总结* |
+|------| 
 
-[2] Chao, Patrick, Alexander Robey, Edgar Dobriban, Hamed Hassani, George J. Pappas, and Eric Wong. "Jailbreaking black box large language models in twenty queries." In 2025 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML), pp. 23-42. IEEE, 2025.
+| 技术路线   |  算法名称  |  特点  | 下载链接  | 
+| --------  | :-----:  | :----:  |  :----:  |
+|  重写攻击  | 重写攻击 |  ......  | |
 
-* GCG
-
-[3] Zou, Andy, Zifan Wang, Nicholas Carlini, Milad Nasr, J. Zico Kolter, and Matt Fredrikson. "Universal and transferable adversarial attacks on aligned language models." arXiv preprint arXiv:2307.15043 (2023).
-
-* AutoDAN
-
-[4] Li, Qizhang, Yiwen Guo, Wangmeng Zuo, and Hao Chen. "Improved generation of adversarial examples against safety-aligned llms." arXiv preprint arXiv:2405.20778 (2024)
-
-* TAP
-
-[5] Mehrotra, Anay, Manolis Zampetakis, Paul Kassianik, Blaine Nelson, Hyrum Anderson, Yaron Singer, and Amin Karbasi. "Tree of attacks: Jailbreaking black-box llms automatically." Advances in Neural Information Processing Systems 37 (2024): 61065-61105.
-
-* Overload Attack
-
-[6] Dong, Yiting, Guobin Shen, Dongcheng Zhao, Xiang He, and Yi Zeng. "Harnessing Task Overload for Scalable Jailbreak Attacks on Large Language Models." arXiv preprint arXiv:2410.04190 (2024).
-
-* ArtPropmt
-
-[7] Jiang, Fengqing, Zhangchen Xu, Luyao Niu, Zhen Xiang, Bhaskar Ramasubramanian, Bo Li, and Radha Poovendran. "Artprompt: Ascii art-based jailbreak attacks against aligned llms." In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 15157-15173. 2024.
-
-* DeepInception
-
-[8] Li, Xuan, Zhanke Zhou, Jianing Zhu, Jiangchao Yao, Tongliang Liu, and Bo Han. "Deepinception: Hypnotize large language model to be jailbreaker." arXiv preprint arXiv:2311.03191 (2023).
-
-* GPT4-Cipher
-
-[9] Shen, Guobin, Dongcheng Zhao, Linghao Feng, Xiang He, Jihang Wang, Sicheng Shen, Haibo Tong et al. "PandaGuard: Systematic Evaluation of LLM Safety in the Era of Jailbreaking Attacks." arXiv preprint arXiv:2505.13862 (2025).
-
-* SCAV
-
-[10] Xu, Zhihao, Ruixuan Huang, Changyu Chen, and Xiting Wang. "Uncovering safety risks of large language models through concept activation vector." Advances in Neural Information Processing Systems 37 (2024): 116743-116782.
-
-* RandomSearch
-
-[11] Andriushchenko, Maksym, Francesco Croce, and Nicolas Flammarion. "Jailbreaking leading safety-aligned llms with simple adaptive attacks." arXiv preprint arXiv:2404.02151 (2024).
-
-* ICA
-
-[12] Wei, Zeming, Yifei Wang, Ang Li, Yichuan Mo, and Yisen Wang. "Jailbreak and guard aligned language models with only few in-context demonstrations." arXiv preprint arXiv:2310.06387 (2023).
-
-* Cold Attack
-
-[13] Guo, Xingang, Fangxu Yu, Huan Zhang, Lianhui Qin, and Bin Hu. "Cold-attack: Jailbreaking llms with stealthiness and controllability." arXiv preprint arXiv:2402.08679 (2024).
-
-* GPTFuzzer
-
-[14] Yu, Jiahao, Xingwei Lin, Zheng Yu, and Xinyu Xing. "Gptfuzzer: Red teaming large language models with auto-generated jailbreak prompts." arXiv preprint arXiv:2309.10253 (2023).
-
-* ReNeLLM
-
-[15] Ding, Peng, Jun Kuang, Dan Ma, Xuezhi Cao, Yunsen Xian, Jiajun Chen, and Shujian Huang. "A Wolf in Sheep's Clothing: Generalized Nested Jailbreak Prompts can Fool Large Language Models Easily." arXiv preprint arXiv:2311.08268 (2023).
-
+（待后续完善）
 
 ## 3. AI安全数据集
 
-无论是构建AI安全防护措施还是评测AI安全防护效果，都需要一系列专业化的安全数据集支撑。当前已有公开安全数据集包括：XXX[]、XXX[]等，但上述数据集完全基于英文，对中文防护支撑不足；2024年以来，XXX[]、XXX[]等一系列中文大模型评测数据集发布，但上述数据集针对模型准确度，并不完全针对安全；2025年6月，电子标准院发布了XXX[]数据集，但主要针对评测，未考虑数据集用于模型训练，且数据主要由人为筛选和构建，并未针对性地由攻击算法生成或扩充。
+无论是构建AI安全防护措施还是评测AI安全防护效果，都需要一系列专业化的安全数据集支撑。当前已有公开安全数据集包括：XSTest/cite{}、OpenAI Mod/cite{}、HarmBench/cite{}、ToxicChat/cite{}、WILDGUARDMIX/cite{}、BeaverTails/cite{}、AEGIS2.0/cite{}等，但上述数据集完全基于英文，对中文防护支撑不足；2024年以来，Chinese SafetyQA/cite{}、SC-Safety/cite{}、CHiSafetyBench/cite{}等一系列中文大模型评测数据集发布，但上述数据集针对模型准确度，并不完全针对安全；2025年6月，电子标准院发布了XXX[]数据集，但主要针对评测，未考虑数据集用于模型训练，且数据主要由人为筛选和构建，并未针对性地由攻击算法生成或扩充。
 
 因此，我们提出了阡陌中文大模型安全数据集，作为补充，填补现有相关数据集不足。阡陌中文大模型安全数据集包含XXXXX条QA对，覆盖了假设类、注意力转移类、权限类方法导致生成内容合规类问题，
 
 ### 3.1 数据生成目标与方法
-
-
 
 我们基于人工测试的经验，面向生成内容合规性和生成内容非歧视性，收集和构建了一定经典测试用例。再利用TAP、AutoDAN等算法，生成覆盖假设类、注意力转移类、特权类等类型的大模型安全数据集。
 
@@ -301,4 +251,68 @@ $$Recall = \frac{TP}{TP+FN}$$
 ### 6.3 使用方法
 
 ## 7. 声明与使用协议
+
+## 附件一：Reference
+
+* 重写攻击
+
+[1] Andriushchenko, Maksym, and Nicolas Flammarion. "Does Refusal Training in LLMs Generalize to the Past Tense?." arXiv preprint arXiv:2407.11969 (2024).
+
+* PAIR
+
+[2] Chao, Patrick, Alexander Robey, Edgar Dobriban, Hamed Hassani, George J. Pappas, and Eric Wong. "Jailbreaking black box large language models in twenty queries." In 2025 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML), pp. 23-42. IEEE, 2025.
+
+* GCG
+
+[3] Zou, Andy, Zifan Wang, Nicholas Carlini, Milad Nasr, J. Zico Kolter, and Matt Fredrikson. "Universal and transferable adversarial attacks on aligned language models." arXiv preprint arXiv:2307.15043 (2023).
+
+* AutoDAN
+
+[4] Li, Qizhang, Yiwen Guo, Wangmeng Zuo, and Hao Chen. "Improved generation of adversarial examples against safety-aligned llms." arXiv preprint arXiv:2405.20778 (2024)
+
+* TAP
+
+[5] Mehrotra, Anay, Manolis Zampetakis, Paul Kassianik, Blaine Nelson, Hyrum Anderson, Yaron Singer, and Amin Karbasi. "Tree of attacks: Jailbreaking black-box llms automatically." Advances in Neural Information Processing Systems 37 (2024): 61065-61105.
+
+* Overload Attack
+
+[6] Dong, Yiting, Guobin Shen, Dongcheng Zhao, Xiang He, and Yi Zeng. "Harnessing Task Overload for Scalable Jailbreak Attacks on Large Language Models." arXiv preprint arXiv:2410.04190 (2024).
+
+* ArtPropmt
+
+[7] Jiang, Fengqing, Zhangchen Xu, Luyao Niu, Zhen Xiang, Bhaskar Ramasubramanian, Bo Li, and Radha Poovendran. "Artprompt: Ascii art-based jailbreak attacks against aligned llms." In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 15157-15173. 2024.
+
+* DeepInception
+
+[8] Li, Xuan, Zhanke Zhou, Jianing Zhu, Jiangchao Yao, Tongliang Liu, and Bo Han. "Deepinception: Hypnotize large language model to be jailbreaker." arXiv preprint arXiv:2311.03191 (2023).
+
+* GPT4-Cipher
+
+[9] Shen, Guobin, Dongcheng Zhao, Linghao Feng, Xiang He, Jihang Wang, Sicheng Shen, Haibo Tong et al. "PandaGuard: Systematic Evaluation of LLM Safety in the Era of Jailbreaking Attacks." arXiv preprint arXiv:2505.13862 (2025).
+
+* SCAV
+
+[10] Xu, Zhihao, Ruixuan Huang, Changyu Chen, and Xiting Wang. "Uncovering safety risks of large language models through concept activation vector." Advances in Neural Information Processing Systems 37 (2024): 116743-116782.
+
+* RandomSearch
+
+[11] Andriushchenko, Maksym, Francesco Croce, and Nicolas Flammarion. "Jailbreaking leading safety-aligned llms with simple adaptive attacks." arXiv preprint arXiv:2404.02151 (2024).
+
+* ICA
+
+[12] Wei, Zeming, Yifei Wang, Ang Li, Yichuan Mo, and Yisen Wang. "Jailbreak and guard aligned language models with only few in-context demonstrations." arXiv preprint arXiv:2310.06387 (2023).
+
+* Cold Attack
+
+[13] Guo, Xingang, Fangxu Yu, Huan Zhang, Lianhui Qin, and Bin Hu. "Cold-attack: Jailbreaking llms with stealthiness and controllability." arXiv preprint arXiv:2402.08679 (2024).
+
+* GPTFuzzer
+
+[14] Yu, Jiahao, Xingwei Lin, Zheng Yu, and Xinyu Xing. "Gptfuzzer: Red teaming large language models with auto-generated jailbreak prompts." arXiv preprint arXiv:2309.10253 (2023).
+
+* ReNeLLM
+
+[15] Ding, Peng, Jun Kuang, Dan Ma, Xuezhi Cao, Yunsen Xian, Jiajun Chen, and Shujian Huang. "A Wolf in Sheep's Clothing: Generalized Nested Jailbreak Prompts can Fool Large Language Models Easily." arXiv preprint arXiv:2311.08268 (2023).
+
+
 
