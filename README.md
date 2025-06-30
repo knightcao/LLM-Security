@@ -124,6 +124,12 @@
 
 将数据集按照7:2:1分配为训练集``trian.zip``、测试集``test.zip``和验证集``val.zip``。
 
+``trian.zip`` 下载地址： https://huggingface.co/
+
+``test.zip`` 下载地址： https://huggingface.co/
+
+``val.zip`` 下载地址： https://huggingface.co/
+
 ### 3.4 数据文件命名
 
 每个数据集中包括多个``.txt``文件，按 ``A_B_C.txt``方式命名，其中：
