@@ -199,14 +199,13 @@
 
 * 开源系列，包括：``Base版（3 B）``，``Small版(0.5 B)``，供测试对比和研究使用。
 
-
 | 模型名称   | 模型版本  |  备注  | 下载链接  | 
-| --------  | -----:  | :----:  |  :----:  |
-| QianMo商用版 Large  | 7 B   |  作为商用产品内核，后续发布  | |
-| QianMo商用版-Base   | 3 B   |  作为商用产品内核  | |
-| QianMo商用版-Small  | 0.5 B |  作为商用产品内核  | |
-| QianMo开源版-Base   | 3 B   |  开源版 | https://huggingface.co/ |
-| QianMo开源版-Small  | 0.5 B |  开源版 | https://huggingface.co/ |
+| :----:  | :----:  | :----:  |  :----:  |
+| JianWei商用版 Large  | 7 B   |  作为商用产品内核，后续发布  | |
+| JianWei商用版-Base   | 3 B   |  作为商用产品内核  | |
+| JianWei商用版-Small  | 0.5 B |  作为商用产品内核  | |
+| &#x2705; JianWei开源版-Base   | 3 B   |  开源版 | https://huggingface.co/ |
+| JianWei开源版-Small  | 0.5 B |  开源版 | https://huggingface.co/ |
 
 ## 5. 大模型安全防护效果评测
 
@@ -223,18 +222,18 @@ $$Precision = \frac{TP}{TP+FP}$$
 $$Recall = \frac{TP}{TP+FN}$$
 
 | -     | 判断为真  |  判断不为真  |
-| --------      | -----:  | :----:  |
+| --------   | ：-----:  | :----:  |
 | 事实为真    | TP  |  FN  |
-| 事实不为真    | FP  |  TN  |
+| 事实不为真  | FP  |  TN  |
 
 ### 5.2 评测对比
 
 我们选择当前国内外业界声称的Sota算法进行对比，包括：Llama Prompt Guard 2、等。
 
 | 模型名称     | 模型体量 |  备注  |
-| --------      | -----:  | :----:  |
-| QianMo商用版  | XXM |  Ours, 商用  |
-| QianMo开源版  | XXM |  Ours, 商用  |
+| --------      | ：-----:  | :----:  |
+| JianWei商用版  | 0.5B |  Ours, 商用  |
+| JianWei开源版  | 0.5B |  Ours, 开源  |
 | Llama Prompt Guard  2  | 22M |    |
 
 ### 5.3 评测结果
