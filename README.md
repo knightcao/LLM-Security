@@ -14,9 +14,9 @@
 
 本项目的主要工作与系统架构见下图：
 
-!["系统架构与相关工作"](https://i0.wp.com/morseandlewisandendeavour.com/wp-content/uploads/2020/02/IT-IS-COMING.jpg?resize=572%2C316&ssl=1 )
+![图片](https://github.com/user-attachments/assets/04fb38b5-995d-4352-afff-67332ab898ab)
 |:--:| 
-| *Fig1. 系统架构与相关工作* |
+| *Fig1. 本项目的主要工作与系统架构* |
 
 
 ## 2. 生成式人工智能面临的潜在风险
@@ -154,13 +154,13 @@
 
 ### 3.3 数据集分配与获取				
 
-将数据集按照7:1:2分配为训练集``trian.zip``、验证集``val.zip``和测试集``test.zip``。
+将数据集按照``7:1:2``分配为训练集``trian.zip``、验证集``val.zip``和测试集``test.zip``。
 
 ``trian.zip`` 作为模型的训练数据，下载地址： https://huggingface.co/
 
 ``val.zip`` 作为模型训练过程中的验证数据，下载地址： https://huggingface.co/
 
-``test.zip`` 作为模型训练完成后的测试数据，我们未将数据公开，而是提供了评测的接口，使用者可以通过API方法开展评测，API返回评测得分。
+``test.zip`` 作为模型训练完成后的测试数据，我们未将数据公开，而是提供了评测的接口，使用者可以通过API方法开展评测，API返回评测得分。调用页面见：http://www.www.www
 
 ### 3.4 数据文件命名
 
@@ -230,7 +230,7 @@ $$Recall = \frac{TP}{TP+FN}$$
 
 ### 5.2 评测对比
 
-我们选择当前国内外业界声称的Sota算法进行对比，包括：Llama Prompt Guard 2/cite{Chi2024}、GradSafe/cite{Xie2024}、SelfDefense/cite{Phute2023}、GoalPriority/cite{Zhang2023}等。
+我们选择当前国内外业界声称的Sota算法进行对比，包括：Llama Prompt Guard 2[<sup>[Chi2024]</sup>](#[Chi2024])、GradSafe[<sup>[Xie2024]</sup>](#[Xie2024])、SelfDefense[<sup>[Phute2023]</sup>](#[Phute2023])、GoalPriority[<sup>[Zhang2023]</sup>](#[[Zhang2023])等。
 
 | 模型名称     | 模型体量 |  备注  |
 | --------      | :----: | :----:  |
