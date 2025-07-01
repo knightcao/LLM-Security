@@ -204,8 +204,8 @@
 | JianWei商用版 Large  | 7 B   |  作为商用产品内核，后续发布  | |
 | JianWei商用版-Base   | 1 B   |  作为商用产品内核  | |
 | JianWei商用版-Small  | 86 M |  作为商用产品内核  | |
-| &#x2705; JianWei开源版-Base   | 1 B   |  开源版 | https://huggingface.co/ |
-| JianWei开源版-Small  | 86M |  开源版 | https://huggingface.co/ |
+| JianWei开源版-Base   | 1 B   |  开源版 | https://huggingface.co/ |
+| &#x2705; JianWei开源版-Small  | 86M |  开源版 | https://huggingface.co/ |
 
 ## 5. 大模型安全防护效果评测
 
