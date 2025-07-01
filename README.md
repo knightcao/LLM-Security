@@ -195,17 +195,17 @@
 
 生成的模型包括：
 
-* 商用系列，包括：``Large版（7 B）``、``Base版(3 B)``、，``Small版(0.5 B)``等，作为商用化产品的核心引擎,内置在大模型安全围栏系统内，随产品出售；
+* 商用系列，包括：``Large版（7 B）``、``Base版(1 B)``、，``Small版(86M)``等，作为商用化产品的核心引擎,内置在大模型安全围栏系统内，随产品出售；
 
-* 开源系列，包括：``Base版（3 B）``，``Small版(0.5 B)``，供测试对比和研究使用。
+* 开源系列，包括：``Base版（1 B）``，``Small版(86M)``，供测试对比和研究使用。
 
 | 模型名称   | 模型版本  |  备注  | 下载链接  | 
 | :----:  | :----:  | :----:  |  :----:  |
 | JianWei商用版 Large  | 7 B   |  作为商用产品内核，后续发布  | |
-| JianWei商用版-Base   | 3 B   |  作为商用产品内核  | |
-| JianWei商用版-Small  | 0.5 B |  作为商用产品内核  | |
-| &#x2705; JianWei开源版-Base   | 3 B   |  开源版 | https://huggingface.co/ |
-| JianWei开源版-Small  | 0.5 B |  开源版 | https://huggingface.co/ |
+| JianWei商用版-Base   | 1 B   |  作为商用产品内核  | |
+| JianWei商用版-Small  | 86 M |  作为商用产品内核  | |
+| &#x2705; JianWei开源版-Base   | 1 B   |  开源版 | https://huggingface.co/ |
+| JianWei开源版-Small  | 86M |  开源版 | https://huggingface.co/ |
 
 ## 5. 大模型安全防护效果评测
 
@@ -222,24 +222,34 @@ $$Precision = \frac{TP}{TP+FP}$$
 $$Recall = \frac{TP}{TP+FN}$$
 
 | -     | 判断为真  |  判断不为真  |
-| --------   | ：-----:  | :----:  |
+| --------   | :----:  | :----:  |
 | 事实为真    | TP  |  FN  |
 | 事实不为真  | FP  |  TN  |
 
 ### 5.2 评测对比
 
-我们选择当前国内外业界声称的Sota算法进行对比，包括：Llama Prompt Guard 2、等。
+我们选择当前国内外业界声称的Sota算法进行对比，包括：Llama Prompt Guard 2/cite{Chi2024}、GradSafe/cite{Xie2024}、SelfDefense/cite{Phute2023}、GoalPriority/cite{Zhang2023}等。
 
 | 模型名称     | 模型体量 |  备注  |
-| --------      | ：-----:  | :----:  |
-| JianWei商用版  | 0.5B |  Ours, 商用  |
-| JianWei开源版  | 0.5B |  Ours, 开源  |
-| Llama Prompt Guard  2  | 22M |    |
+| --------      | :----: | :----:  |
+| JianWei商用版  | 86M |  Ours, 商用  |
+| &#x2705; JianWei开源版  | 86M |  Ours, 开源  |
+| &#x2705; Llama Prompt Guard 2  | 86M |    |
+| GradSafe  |   |       |
+| SelfDefense   |   |   |
+| GoalPriority  |   |   |
+
+[Chi2024] Chi, Jianfeng, Ujjwal Karn, Hongyuan Zhan, Eric Smith, Javier Rando, Yiming Zhang, Kate Plawiak, Zacharie Delpierre Coudert, Kartikeya Upasani, and Mahesh Pasupuleti. "Llama guard 3 vision: Safeguarding human-ai image understanding conversations." arXiv preprint arXiv:2411.10414 (2024).
+
+[Xie2024] Xie, Yueqi, Minghong Fang, Renjie Pi, and Neil Gong. "GradSafe: Detecting Jailbreak Prompts for LLMs via Safety-Critical Gradient Analysis." arXiv preprint arXiv:2402.13494 (2024).
+
+[Phute2023] Phute, Mansi, Alec Helbling, Matthew Hull, ShengYun Peng, Sebastian Szyller, Cory Cornelius, and Duen Horng Chau. "Llm self defense: By self examination, llms know they are being tricked." arXiv preprint arXiv:2308.07308 (2023).
+
+[Zhang2023] Zhang, Zhexin, Junxiao Yang, Pei Ke, Fei Mi, Hongning Wang, and Minlie Huang. "Defending large language models against jailbreaking attacks through goal prioritization." arXiv preprint arXiv:2311.09096 (2023).
 
 ### 5.3 评测结果
 
 ![图片](https://github.com/user-attachments/assets/5345f481-c4fc-4b40-a4e3-83881966fb5e)
-
 
 ## 6. 部署指南
 
