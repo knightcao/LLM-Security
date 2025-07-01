@@ -176,7 +176,7 @@
 
 ### 4.1 关键技术
 
-我们基于 Transformer 和 Bert 架构，训练出多个分类模型，进行综合决策，用于识别大模型的输入是否被恶意攻击、输出是否异常，是否应该需要进行过滤和发出警告。对提升模型精度，我们对现有的通用算法进行了一些技术改进。
+我们基于 Transformer 和 Bert 架构的mDeBERTa-v3-base作为基础模型，训练出多个分类模型，再进行综合决策，用于识别大模型的输入是否被恶意攻击、输出是否异常等，判断是否应该需要进行过滤和发出警告。为提升模型精度，我们在基础模型和通用算法基础上，进行了一些技术改进。
 
 #### 蒸馏技术
 
@@ -235,21 +235,14 @@ $$Recall = \frac{TP}{TP+FN}$$
 | JianWei商用版  | 86M |  Ours, 商用  |
 | &#x2705; JianWei开源版  | 86M |  Ours, 开源  |
 | &#x2705; Llama Prompt Guard 2  | 86M |    |
-| GradSafe  |   |       |
+| GradSafe      |   |   |
 | SelfDefense   |   |   |
 | GoalPriority  |   |   |
 
-[Chi2024] Chi, Jianfeng, Ujjwal Karn, Hongyuan Zhan, Eric Smith, Javier Rando, Yiming Zhang, Kate Plawiak, Zacharie Delpierre Coudert, Kartikeya Upasani, and Mahesh Pasupuleti. "Llama guard 3 vision: Safeguarding human-ai image understanding conversations." arXiv preprint arXiv:2411.10414 (2024).
-
-[Xie2024] Xie, Yueqi, Minghong Fang, Renjie Pi, and Neil Gong. "GradSafe: Detecting Jailbreak Prompts for LLMs via Safety-Critical Gradient Analysis." arXiv preprint arXiv:2402.13494 (2024).
-
-[Phute2023] Phute, Mansi, Alec Helbling, Matthew Hull, ShengYun Peng, Sebastian Szyller, Cory Cornelius, and Duen Horng Chau. "Llm self defense: By self examination, llms know they are being tricked." arXiv preprint arXiv:2308.07308 (2023).
-
-[Zhang2023] Zhang, Zhexin, Junxiao Yang, Pei Ke, Fei Mi, Hongning Wang, and Minlie Huang. "Defending large language models against jailbreaking attacks through goal prioritization." arXiv preprint arXiv:2311.09096 (2023).
-
 ### 5.3 评测结果
 
-![图片](https://github.com/user-attachments/assets/5345f481-c4fc-4b40-a4e3-83881966fb5e)
+![图片](https://github.com/user-attachments/assets/fc8e1653-7ecc-48b5-b6c8-be0922005d3b)
+
 
 ## 6. 部署指南
 
@@ -327,5 +320,11 @@ $$Recall = \frac{TP}{TP+FN}$$
 
 [15] Ding, Peng, Jun Kuang, Dan Ma, Xuezhi Cao, Yunsen Xian, Jiajun Chen, and Shujian Huang. "A Wolf in Sheep's Clothing: Generalized Nested Jailbreak Prompts can Fool Large Language Models Easily." arXiv preprint arXiv:2311.08268 (2023).
 
+[Chi2024] Chi, Jianfeng, Ujjwal Karn, Hongyuan Zhan, Eric Smith, Javier Rando, Yiming Zhang, Kate Plawiak, Zacharie Delpierre Coudert, Kartikeya Upasani, and Mahesh Pasupuleti. "Llama guard 3 vision: Safeguarding human-ai image understanding conversations." arXiv preprint arXiv:2411.10414 (2024).
 
+[Xie2024] Xie, Yueqi, Minghong Fang, Renjie Pi, and Neil Gong. "GradSafe: Detecting Jailbreak Prompts for LLMs via Safety-Critical Gradient Analysis." arXiv preprint arXiv:2402.13494 (2024).
+
+[Phute2023] Phute, Mansi, Alec Helbling, Matthew Hull, ShengYun Peng, Sebastian Szyller, Cory Cornelius, and Duen Horng Chau. "Llm self defense: By self examination, llms know they are being tricked." arXiv preprint arXiv:2308.07308 (2023).
+
+[Zhang2023] Zhang, Zhexin, Junxiao Yang, Pei Ke, Fei Mi, Hongning Wang, and Minlie Huang. "Defending large language models against jailbreaking attacks through goal prioritization." arXiv preprint arXiv:2311.09096 (2023).
 
