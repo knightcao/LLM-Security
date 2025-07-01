@@ -73,7 +73,7 @@
 
 ### 2.3 提示注入攻击的生成算法
 
-从诱导人工智能生成有害内容的技术措施来看，研究人员陆续提出了多种生成算法，并仍然在快速演进。比如有影响力的算法包括：重写攻击/cite{Andriushchenko2024}、PAIR/cite{Chao2025}、GCG/cite{Zou2023}、AutoDAN/cite{Li2024}、TAP、cite{Mehrotra2024}、Overload Attack/cite{Dong2024}、ArtPropmt/cite{Jiang2024}、 DeepInception/cite{Li2023}、GPT4-Cipher/cite{Shen2025}、SCAV/cite{Xu2024}、RandomSearch/cite{Andriushchenko2024}、ICA/cite{Wei2023}、Cold Attack/cite{Guo2024}、GPTFuzzer/cite{Yu2023}、ReNeLLM/cite{Ding2023}等，详见附件。
+从诱导人工智能生成有害内容的技术措施来看，研究人员陆续提出了多种生成算法，并仍然在快速演进。比如有影响力的算法包括：重写攻击[<sup>[Andriushchenko2024]</sup>]、PAIR[<sup>[Chao2025]</sup>]、GCG[<sup>[Zou2023]</sup>]、AutoDAN[<sup>[Li2024]</sup>]、TAP[<sup>[Mehrotra2024]</sup>]、Overload Attack[<sup>[Dong2024]</sup>]、ArtPropmt[<sup>[Jiang2024]</sup>]、DeepInception/[<sup>[Li2023]</sup>]、GPT4-Cipher[<sup>[Shen2025]</sup>]、SCAV[<sup>[Xu2024]</sup>]、RandomSearch[<sup>[Andriushchenko2024]</sup>]、ICA[<sup>[Wei2023]</sup>]、Cold Attack[<sup>[Guo2024]</sup>]、GPTFuzzer[<sup>[Yu2023]</sup>]、ReNeLLMr[<sup>[Ding2023]</sup>]等，详见附件。
 
 我们对上述攻击技术进行了总结：
 
@@ -88,7 +88,7 @@
 
 ## 3. AI安全数据集
 
-无论是构建AI安全防护措施还是评测AI安全防护效果，都需要一系列专业化的安全数据集支撑。当前已有公开安全数据集包括：XSTest/cite{}、OpenAI Mod/cite{}、HarmBench/cite{}、ToxicChat/cite{}、WILDGUARDMIX/cite{}、BeaverTails/cite{}、AEGIS2.0/cite{}等，但上述数据集完全基于英文，对中文防护支撑不足；2024年以来，Chinese SafetyQA/cite{}、SC-Safety/cite{}、CHiSafetyBench/cite{}等一系列中文大模型评测数据集发布，但上述数据集没有考虑通过人工智能越狱算法构建数据，但主要针对评测，未考虑数据集用于模型训练，且数据主要由人为筛选和构建，并未针对性地由攻击算法生成或扩充，导致了所构建的模型对算法攻击的防御效果有限。
+无论是构建AI安全防护措施还是评测AI安全防护效果，都需要一系列专业化的安全数据集支撑。当前已有公开安全数据集包括：XSTest[<sup>[Röttger2023]</sup>]、OpenAI Mod[<sup>[Markov2023]</sup>]、HarmBench[<sup>[Mazeika2024]</sup>]、ToxicChat[<sup>[Lin2023]</sup>]、WildGuard[<sup>[Han2024]</sup>]、BeaverTails[<sup>[Ji2023]</sup>]、AEGIS2.0[<sup>[Ghosh2025]</sup>]等，但上述数据集完全基于英文，对中文防护支撑不足；2024年以来，Chinese SafetyQA/cite{}、SC-Safety/cite{}、CHiSafetyBench/cite{}等一系列中文大模型评测数据集发布，但上述数据集没有考虑通过人工智能越狱算法构建数据，但主要针对评测，未考虑数据集用于模型训练，且数据主要由人为筛选和构建，并未针对性地由攻击算法生成或扩充，导致了所构建的模型对算法攻击的防御效果有限。
 
 因此，我们提出了阡陌中文大模型安全数据集，作为补充，填补现有相关数据集不足。阡陌中文大模型安全数据集包含XXXXX条QA对，覆盖了假设类、注意力转移类、权限类方法导致生成内容合规类问题，
 
@@ -154,13 +154,13 @@
 
 ### 3.3 数据集分配与获取				
 
-将数据集按照``7:1:2``分配为训练集``trian.zip``、验证集``val.zip``和测试集``test.zip``。
+将数据集按照``7:1:2``分配为训练集``trian.json``、验证集``val.json``和测试集``test.json``。
 
-``trian.zip`` 作为模型的训练数据，下载地址： https://huggingface.co/
+``trian.json`` 作为模型的训练数据，下载地址： https://huggingface.co/
 
-``val.zip`` 作为模型训练过程中的验证数据，下载地址： https://huggingface.co/
+``val.json`` 作为模型训练过程中的验证数据，下载地址： https://huggingface.co/
 
-``test.zip`` 作为模型训练完成后的测试数据，我们未将数据公开，而是提供了评测的接口，使用者可以通过API方法开展评测，API返回评测得分。调用页面见：http://www.www.www
+``test.json`` 作为模型训练完成后的测试数据，我们未将数据公开，而是提供了评测的接口，使用者可以通过API方法开展评测，API返回评测得分。调用页面见：http://www.www.www
 
 ### 3.4 数据文件命名
 
@@ -174,9 +174,26 @@
 
 ## 4. AI安全防护围栏核心模型
 
-### 4.1 关键技术
+### 4.1 模型版本
 
-我们基于 Transformer 和 Bert 架构的mDeBERTa-v3-base作为基础模型，训练出多个分类模型，再进行综合决策，用于识别大模型的输入是否被恶意攻击、输出是否异常等，判断是否应该需要进行过滤和发出警告。为提升模型精度，我们在基础模型和通用算法基础上，进行了一些技术改进。
+生成的模型包括：
+
+* 商用系列，包括：``Large版（7 B）``、``Base版(1 B)``、，``Small版(86M)``等，作为商用化产品的核心引擎，内置在大模型安全围栏系统内，随产品出售。对商用版本提供商业化技术支撑与服务。对商用化版本将提供多种软硬件环境下配合优化后的部署版本。
+
+* 开源系列，包括：``Base版（1 B）``，``Small版(86M)``，供测试对比和研究使用。对开源版本提供在华为昇腾910B环境适配与部署的版本。
+
+| 模型名称   | 模型版本  |  备注  | 下载链接  | 
+| :---- | :----:  | :----  |  :----  |
+| JianWei商用版 Large  | 7 B   |  作为商用产品内核，后续发布  | |
+| JianWei商用版-Base   | 1 B   |  作为商用产品内核  | |
+| JianWei商用版-Small  | 86 M |  作为商用产品内核  | |
+| JianWei开源版-Base   | 1 B   |  开源版 |  |
+| &#x2705; JianWei开源版-Small-dev  | 86M |  开源版 | https://huggingface.co/ |
+| &#x2705; JianWei开源版-Small-ascend910B  | 86M |  开源版 | https://huggingface.co/ |
+
+### 4.2 关键技术
+
+我们基于 Transformer 和 Bert 架构的``mDeBERTa-v3-base``作为基础模型，训练出多个分类模型，再进行综合决策，用于识别大模型的输入是否被恶意攻击、输出是否异常等，判断是否应该需要进行过滤和发出警告。为提升模型精度，我们在基础模型和通用算法基础上，进行了一些技术改进。
 
 * 蒸馏技术
 
@@ -192,22 +209,6 @@
 
 利用混合专家模型MoE方法，构建一个稀疏的模型，进行综合决策。采用MoE方法，准确率提升了XX%。
 
-
-### 4.2 模型版本
-
-生成的模型包括：
-
-* 商用系列，包括：``Large版（7 B）``、``Base版(1 B)``、，``Small版(86M)``等，作为商用化产品的核心引擎,内置在大模型安全围栏系统内，随产品出售；
-
-* 开源系列，包括：``Base版（1 B）``，``Small版(86M)``，供测试对比和研究使用。
-
-| 模型名称   | 模型版本  |  备注  | 下载链接  | 
-| :----:  | :----:  | :----:  |  :----:  |
-| JianWei商用版 Large  | 7 B   |  作为商用产品内核，后续发布  | |
-| JianWei商用版-Base   | 1 B   |  作为商用产品内核  | |
-| JianWei商用版-Small  | 86 M |  作为商用产品内核  | |
-| JianWei开源版-Base   | 1 B   |  开源版 | https://huggingface.co/ |
-| &#x2705; JianWei开源版-Small  | 86M |  开源版 | https://huggingface.co/ |
 
 ## 5. 大模型安全防护效果评测
 
@@ -230,23 +231,23 @@ $$Recall = \frac{TP}{TP+FN}$$
 
 ### 5.2 评测对比
 
-我们选择当前国内外业界声称的Sota算法进行对比，包括：Llama Prompt Guard 2[<sup>[Chi2024]</sup>](#[Chi2024])、GradSafe[<sup>[Xie2024]</sup>](#[Xie2024])、SelfDefense[<sup>[Phute2023]</sup>](#[Phute2023])、GoalPriority[<sup>[Zhang2023]</sup>](#[[Zhang2023])等。
+我们选择当前国内外业界声称的Sota算法进行对比，即包括产业界开发的开源和公用产品如：Llama Prompt Guard 2[<sup>[Chi2024]</sup>](#[Chi2024])和ProtectAI[<sup>[ProtectAI]</sup>](#[Chi2024])等，也包括学术界提出的技术方法，如：GradSafe[<sup>[Xie2024]</sup>](#[Xie2024])、SelfDefense[<sup>[Phute2023]</sup>](#[Phute2023])、GoalPriority[<sup>[Zhang2023]</sup>](#[[Zhang2023])等。
 
 | 模型名称     | 模型体量 |  备注  |
 | --------      | :----: | :----:  |
 | JianWei商用版  | 86M |  Ours, 商用  |
 | &#x2705; JianWei开源版  | 86M |  Ours, 开源  |
 | &#x2705; Llama Prompt Guard 2  | 86M |    |
+| &#x2705; ProtectAI  | unknown |    |
 | GradSafe      |   |   |
 | SelfDefense   |   |   |
 | GoalPriority  |   |   |
 
 ### 5.3 评测结果
 
-![图片](https://github.com/user-attachments/assets/fc8e1653-7ecc-48b5-b6c8-be0922005d3b)
+![图片](https://github.com/user-attachments/assets/8818ebab-cea4-4414-a4f4-c4a9940d647b)
 
-
-## 6. 部署指南
+## 6. 部署指南(内容待更新)
 
 ### 6.1 安装最新版本
 
@@ -254,7 +255,7 @@ $$Recall = \frac{TP}{TP+FN}$$
 
 ### 6.2 启动服务
 
-`` qianmo serve  ``
+`` qianmo server  ``
 
 ### 6.3 使用方法
 
@@ -322,11 +323,51 @@ $$Recall = \frac{TP}{TP+FN}$$
 
 [15] Ding, Peng, Jun Kuang, Dan Ma, Xuezhi Cao, Yunsen Xian, Jiajun Chen, and Shujian Huang. "A Wolf in Sheep's Clothing: Generalized Nested Jailbreak Prompts can Fool Large Language Models Easily." arXiv preprint arXiv:2311.08268 (2023).
 
-[Chi2024] Chi, Jianfeng, Ujjwal Karn, Hongyuan Zhan, Eric Smith, Javier Rando, Yiming Zhang, Kate Plawiak, Zacharie Delpierre Coudert, Kartikeya Upasani, and Mahesh Pasupuleti. "Llama guard 3 vision: Safeguarding human-ai image understanding conversations." arXiv preprint arXiv:2411.10414 (2024).
+* Llama Prompt Guard2
+
+[Chi2024] https://github.com/meta-llama/PurpleLlama/tree/main/Llama-Prompt-Guard-2
+
+* protectai
+
+[ProtectAI] https://protectai.com/
+
+* GradSafe
 
 [Xie2024] Xie, Yueqi, Minghong Fang, Renjie Pi, and Neil Gong. "GradSafe: Detecting Jailbreak Prompts for LLMs via Safety-Critical Gradient Analysis." arXiv preprint arXiv:2402.13494 (2024).
 
+* Llm self defense
+
 [Phute2023] Phute, Mansi, Alec Helbling, Matthew Hull, ShengYun Peng, Sebastian Szyller, Cory Cornelius, and Duen Horng Chau. "Llm self defense: By self examination, llms know they are being tricked." arXiv preprint arXiv:2308.07308 (2023).
 
+* goal prioritization
+
 [Zhang2023] Zhang, Zhexin, Junxiao Yang, Pei Ke, Fei Mi, Hongning Wang, and Minlie Huang. "Defending large language models against jailbreaking attacks through goal prioritization." arXiv preprint arXiv:2311.09096 (2023).
+
+* Xstest
+
+[Röttger2023] Röttger, Paul, Hannah Rose Kirk, Bertie Vidgen, Giuseppe Attanasio, Federico Bianchi, and Dirk Hovy. "Xstest: A test suite for identifying exaggerated safety behaviours in large language models." arXiv preprint arXiv:2308.01263 (2023).
+
+* OpenAI Mod
+
+[Markov2023] Markov, Todor, Chong Zhang, Sandhini Agarwal, Florentine Eloundou Nekoul, Theodore Lee, Steven Adler, Angela Jiang, and Lilian Weng. "A holistic approach to undesired content detection in the real world." In Proceedings of the AAAI Conference on Artificial Intelligence, vol. 37, no. 12, pp. 15009-15018. 2023.
+
+* Harmbench
+
+[Mazeika2024] Mazeika, Mantas, Long Phan, Xuwang Yin, Andy Zou, Zifan Wang, Norman Mu, Elham Sakhaee et al. "Harmbench: A standardized evaluation framework for automated red teaming and robust refusal." arXiv preprint arXiv:2402.04249 (2024).
+
+* Toxicchat
+
+[Lin2023] Lin, Zi, Zihan Wang, Yongqi Tong, Yangkun Wang, Yuxin Guo, Yujia Wang, and Jingbo Shang. "Toxicchat: Unveiling hidden challenges of toxicity detection in real-world user-ai conversation." arXiv preprint arXiv:2310.17389 (2023).
+
+* WildGuard
+
+[Han2024] Han, Seungju, Kavel Rao, Allyson Ettinger, Liwei Jiang, Bill Yuchen Lin, Nathan Lambert, Yejin Choi, and Nouha Dziri. "Wildguard: Open one-stop moderation tools for safety risks, jailbreaks, and refusals of llms." arXiv preprint arXiv:2406.18495 (2024).
+
+* Beavertails
+
+[Ji2023] Ji, Jiaming, Mickel Liu, Josef Dai, Xuehai Pan, Chi Zhang, Ce Bian, Boyuan Chen, Ruiyang Sun, Yizhou Wang, and Yaodong Yang. "Beavertails: Towards improved safety alignment of llm via a human-preference dataset." Advances in Neural Information Processing Systems 36 (2023): 24678-24704.
+
+* AEGIS2.0
+
+[Ghosh2025] Ghosh, Shaona, Prasoon Varshney, Makesh Narsimhan Sreedhar, Aishwarya Padmakumar, Traian Rebedea, Jibin Rajan Varghese, and Christopher Parisien. "AEGIS2. 0: A Diverse AI Safety Dataset and Risks Taxonomy for Alignment of LLM Guardrails." arXiv preprint arXiv:2501.09004 (2025).
 
