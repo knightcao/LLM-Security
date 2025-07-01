@@ -2,7 +2,9 @@
 
 ## 最新动态
 
+:joy: 2025.7.1  模型、数据、评测基线发布。
 :joy: 2025.6.20 项目开源启动。
+
 
 ## 1.概述
 
@@ -75,41 +77,38 @@
 
 从诱导人工智能生成有害内容的技术措施来看，研究人员陆续提出了多种生成算法，并仍然在快速演进。比如有影响力的算法包括：重写攻击[<sup>[Andriushchenko2024]</sup>]、PAIR[<sup>[Chao2025]</sup>]、GCG[<sup>[Zou2023]</sup>]、AutoDAN[<sup>[Li2024]</sup>]、TAP[<sup>[Mehrotra2024]</sup>]、Overload Attack[<sup>[Dong2024]</sup>]、ArtPropmt[<sup>[Jiang2024]</sup>]、DeepInception/[<sup>[Li2023]</sup>]、GPT4-Cipher[<sup>[Shen2025]</sup>]、SCAV[<sup>[Xu2024]</sup>]、RandomSearch[<sup>[Andriushchenko2024]</sup>]、ICA[<sup>[Wei2023]</sup>]、Cold Attack[<sup>[Guo2024]</sup>]、GPTFuzzer[<sup>[Yu2023]</sup>]、ReNeLLMr[<sup>[Ding2023]</sup>]等，详见附件。
 
-我们对上述攻击技术进行了总结：
-
-| *Tab1. 主流提示注入算法总结* |
-|------| 
-
-| 技术路线   |  算法名称  |  特点  | 下载链接  | 
-| --------  | :-----:  | :----:  |  :----:  |
-|  重写攻击  | 重写攻击 |  ......  | |
-
-（待后续完善）
-
 ## 3. AI安全数据集
 
 无论是构建AI安全防护措施还是评测AI安全防护效果，都需要一系列专业化的安全数据集支撑。当前已有公开安全数据集包括：XSTest[<sup>[Röttger2023]</sup>]、OpenAI Mod[<sup>[Markov2023]</sup>]、HarmBench[<sup>[Mazeika2024]</sup>]、ToxicChat[<sup>[Lin2023]</sup>]、WildGuard[<sup>[Han2024]</sup>]、BeaverTails[<sup>[Ji2023]</sup>]、AEGIS2.0[<sup>[Ghosh2025]</sup>]等，但上述数据集完全基于英文，对中文防护支撑不足；2024年以来，Chinese SafetyQA/cite{}、SC-Safety/cite{}、CHiSafetyBench/cite{}等一系列中文大模型评测数据集发布，但上述数据集没有考虑通过人工智能越狱算法构建数据，但主要针对评测，未考虑数据集用于模型训练，且数据主要由人为筛选和构建，并未针对性地由攻击算法生成或扩充，导致了所构建的模型对算法攻击的防御效果有限。
 
-因此，我们提出了阡陌中文大模型安全数据集，作为补充，填补现有相关数据集不足。阡陌中文大模型安全数据集包含XXXXX条QA对，覆盖了假设类、注意力转移类、权限类方法导致生成内容合规类问题，
+因此，我们提出了阡陌中文大模型安全数据集，作为补充，填补现有相关数据集不足。
 
-### 3.1 数据生成目标与方法
+阡陌中文大模型安全数据集包含27886条样本数据，其中有害样本数据7886条、正常样本20000条。
 
-我们基于人工测试的经验，面向生成内容合规性和生成内容非歧视性，收集和构建了一定经典测试用例。再利用TAP、AutoDAN等算法，生成覆盖假设类、注意力转移类、特权类等类型的大模型安全数据集。
+### 3.1 数据生成方法与样本分布
 
-### 3.2 数据集构成
+#### 3.1.1 有害样本分布
 
-阡陌*大模型安全评测数据集v1.0
+我们基于人工测试的经验，面向生成内容合规性和生成内容非歧视性，收集和构建了一定经典测试用例；再利用TAP、AutoDAN等算法，生成覆盖假设类、注意力转移类、特权类等类型的大模型安全数据集。
 
+阡陌大模型安全评测数据集v1.0中有害样本的生成方法与数据样本分布如下表：
 
+<div style="text-align:center">
+
+<center>
 <table style="text-align: center;">
   <thead>
    <tr>
        <td rowspan="2"> </td>   
-       <td rowspan="2">假设类 </td>       
+       <td colspan="4">假设类 </td>       
        <td colspan="3">注意力转移类 </td> 
        <td rowspan="2">权限类 </td>    
     </tr>
     <tr>
+        <td> 场景假设 </td>  
+        <td> 角色假设 </td>  
+        <td> 科学实验假设 </td>  
+        <td> 责任假设 </td>  
         <td> 文本续写 </td>  
         <td> 语序颠倒 </td> 
         <td> 多语种与翻译 </td> 
@@ -118,49 +117,68 @@
   <tbody>
     <tr>
          <td> TAP </td> 
-        <td> &#x2705; 1000 条数据 </td>  
-        <td> &#x2705; </td> 
-        <td> &#x2705; </td> 
-        <td> &#x2705; </td> 
-        <td> &#x2705; </td> 
+        <td> &#x2705; <br> 1526 条数据 </td>  
+        <td> &#x2705; <br> 805 条数据 </td>  
+        <td> &#x2705; <br> 1524 条数据 </td>  
+        <td> &#x2705; <br> 1526 条数据 </td>  
+        <td> &#x2705; <br> 356 条数据 </td>  
+        <td> &#x2705; <br> 1352 条数据</td> 
+        <td> &#x2705; <br> 50 条数据</td> 
+        <td> &#x2705; <br> 747 条数据</td> 
     </tr>
     <tr>
         <td> AutoDAN </td> 
-        <td> &#x2705; 1000 条数据 </td>  
+        <td> &#x2705;  </td>  
+        <td> &#x2705;  </td>  
+        <td> &#x2705;  </td>  
+        <td> &#x2705;  </td>  
+        <td> &#x2705;  </td>  
         <td> &#x2705; </td> 
         <td> &#x2705; </td> 
         <td> &#x2705; </td> 
-        <td>  &#x1f504;  </td> 
     </tr>
     <tr>
         <td> GPTFuzz </td> 
-        <td> &#x2705; 1000 条数据 </td>  
-        <td> &#x2705; </td> 
-        <td> &#x2705; </td> 
-        <td> &#x2705; </td> 
+        <td> &#x23f3;   </td>  
+        <td> &#x23f3;   </td>  
+        <td> &#x23f3;   </td>  
+        <td> &#x23f3;  </td>  
+        <td> &#x23f3;   </td>  
+        <td> &#x23f3;  </td> 
+        <td> &#x23f3; </td> 
         <td> &#x23f3;  </td> 
     </tr>
      <tr>
         <td> GCG </td> 
-        <td> &#x2705; 1000 条数据 </td>  
-        <td> &#x2705; </td> 
-        <td> &#x2705; </td> 
-        <td> &#x2705; </td> 
-        <td> &#x274c; </td> 
+        <td> &#x23f3;   </td>  
+        <td> &#x23f3;   </td>  
+        <td> &#x23f3;   </td>  
+        <td> &#x23f3;   </td>  
+        <td> &#x23f3;  </td>  
+        <td> &#x23f3;  </td> 
+        <td> &#x23f3;  </td> 
+        <td> &#x23f3;  </td> 
     </tr>  
   </tbody>
 </table>
 
+</center>
+
+</div>
+
+#### 3.1.2 正常样本分布
+
+数据集中包含了正常样本数据20000条，其中10000条数据从第三方开源数据集中选择高质量样本摘录，来自Firefly（流萤）中文语料数据集[<sup>[Firefly]</sup>]；另10000条利用DeepSeekR1[<sup>[Guo2025]</sup>]大模型辅助人类生成。
 
 ### 3.3 数据集分配与获取				
 
 将数据集按照``7:1:2``分配为训练集``trian.json``、验证集``val.json``和测试集``test.json``。
 
-``trian.json`` 作为模型的训练数据，下载地址： https://huggingface.co/
+``trian.json`` 作为模型的训练数据，下载地址： https://github.com/CTCT-CT2/LLMSec/tree/main
 
-``val.json`` 作为模型训练过程中的验证数据，下载地址： https://huggingface.co/
+``val.json`` 作为模型训练过程中的验证数据，下载地址： https://github.com/CTCT-CT2/LLMSec/tree/main
 
-``test.json`` 作为模型训练完成后的测试数据，我们未将数据公开，而是提供了评测的接口，使用者可以通过API方法开展评测，API返回评测得分。调用页面见：http://www.www.www
+``test.json`` 作为模型训练完成后的测试数据，我们未将数据公开，而是提供了评测的接口，使用者可以通过API方法开展评测，API返回评测得分。调用页面见：https://github.com/CTCT-CT2/LLMSec/tree/main
 
 ### 3.4 数据文件命名
 
@@ -203,12 +221,11 @@
 
 * 基于人类强化学习
 
-通过RLHF技术，不断生成高质量数据语料，自动化进行筛选和标注。采用RLHF技术，准确率提升了XX%。
+通过RLHF技术，不断生成高质量数据语料，自动化进行筛选和标注。采用RLHF技术，提升了数据数量和质量，将数据规模扩充至XXXXX条。
 
 * 稀疏混合专家模型 MoE
 
-利用混合专家模型MoE方法，构建一个稀疏的模型，进行综合决策。采用MoE方法，准确率提升了XX%。
-
+利用混合专家模型MoE方法，构建一个稀疏的模型，进行综合决策。采用MoE方法，平衡了不同类型的准确率，提升了综合能力，总体准确率提升了XX%。
 
 ## 5. 大模型安全防护效果评测
 
@@ -231,7 +248,7 @@ $$Recall = \frac{TP}{TP+FN}$$
 
 ### 5.2 评测对比
 
-我们选择当前国内外业界声称的Sota算法进行对比，即包括产业界开发的开源和公用产品如：Llama Prompt Guard 2[<sup>[Chi2024]</sup>](#[Chi2024])和ProtectAI[<sup>[ProtectAI]</sup>](#[Chi2024])等，也包括学术界提出的技术方法，如：GradSafe[<sup>[Xie2024]</sup>](#[Xie2024])、SelfDefense[<sup>[Phute2023]</sup>](#[Phute2023])、GoalPriority[<sup>[Zhang2023]</sup>](#[[Zhang2023])等。
+我们选择当前国内外业界声称的Sota算法进行对比，既包括产业界开发的开源和提供试用产品，如：Llama Prompt Guard 2[<sup>[Chi2024]</sup>](#[Chi2024])和ProtectAI[<sup>[ProtectAI]</sup>](#[Chi2024])等；也包括学术界提出的先进技术方法，如：GradSafe[<sup>[Xie2024]</sup>](#[Xie2024])、SelfDefense[<sup>[Phute2023]</sup>](#[Phute2023])、GoalPriority[<sup>[Zhang2023]</sup>](#[[Zhang2023])等。
 
 | 模型名称     | 模型体量 |  备注  |
 | --------      | :----: | :----:  |
@@ -245,7 +262,11 @@ $$Recall = \frac{TP}{TP+FN}$$
 
 ### 5.3 评测结果
 
-![图片](https://github.com/user-attachments/assets/8818ebab-cea4-4414-a4f4-c4a9940d647b)
+当前对比评测结果如下：
+
+![图片](https://github.com/user-attachments/assets/93832388-7e42-47e8-8dc2-6588feeeb924)
+|:--:| 
+| *Fig2. AI安全评测结果对比* |
 
 ## 6. 部署指南(内容待更新)
 
@@ -265,63 +286,63 @@ $$Recall = \frac{TP}{TP+FN}$$
 
 * 重写攻击
 
-[1] Andriushchenko, Maksym, and Nicolas Flammarion. "Does Refusal Training in LLMs Generalize to the Past Tense?." arXiv preprint arXiv:2407.11969 (2024).
+[Andriushchenko2024] Andriushchenko, Maksym, and Nicolas Flammarion. "Does Refusal Training in LLMs Generalize to the Past Tense?." arXiv preprint arXiv:2407.11969 (2024).
 
 * PAIR
 
-[2] Chao, Patrick, Alexander Robey, Edgar Dobriban, Hamed Hassani, George J. Pappas, and Eric Wong. "Jailbreaking black box large language models in twenty queries." In 2025 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML), pp. 23-42. IEEE, 2025.
+[Chao2025] Chao, Patrick, Alexander Robey, Edgar Dobriban, Hamed Hassani, George J. Pappas, and Eric Wong. "Jailbreaking black box large language models in twenty queries." In 2025 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML), pp. 23-42. IEEE, 2025.
 
 * GCG
 
-[3] Zou, Andy, Zifan Wang, Nicholas Carlini, Milad Nasr, J. Zico Kolter, and Matt Fredrikson. "Universal and transferable adversarial attacks on aligned language models." arXiv preprint arXiv:2307.15043 (2023).
+[Zou2023] Zou, Andy, Zifan Wang, Nicholas Carlini, Milad Nasr, J. Zico Kolter, and Matt Fredrikson. "Universal and transferable adversarial attacks on aligned language models." arXiv preprint arXiv:2307.15043 (2023).
 
 * AutoDAN
 
-[4] Li, Qizhang, Yiwen Guo, Wangmeng Zuo, and Hao Chen. "Improved generation of adversarial examples against safety-aligned llms." arXiv preprint arXiv:2405.20778 (2024)
+[Li2024] Li, Qizhang, Yiwen Guo, Wangmeng Zuo, and Hao Chen. "Improved generation of adversarial examples against safety-aligned llms." arXiv preprint arXiv:2405.20778 (2024)
 
 * TAP
 
-[5] Mehrotra, Anay, Manolis Zampetakis, Paul Kassianik, Blaine Nelson, Hyrum Anderson, Yaron Singer, and Amin Karbasi. "Tree of attacks: Jailbreaking black-box llms automatically." Advances in Neural Information Processing Systems 37 (2024): 61065-61105.
+[Mehrotra2024] Mehrotra, Anay, Manolis Zampetakis, Paul Kassianik, Blaine Nelson, Hyrum Anderson, Yaron Singer, and Amin Karbasi. "Tree of attacks: Jailbreaking black-box llms automatically." Advances in Neural Information Processing Systems 37 (2024): 61065-61105.
 
 * Overload Attack
 
-[6] Dong, Yiting, Guobin Shen, Dongcheng Zhao, Xiang He, and Yi Zeng. "Harnessing Task Overload for Scalable Jailbreak Attacks on Large Language Models." arXiv preprint arXiv:2410.04190 (2024).
+[Dong2024] Dong, Yiting, Guobin Shen, Dongcheng Zhao, Xiang He, and Yi Zeng. "Harnessing Task Overload for Scalable Jailbreak Attacks on Large Language Models." arXiv preprint arXiv:2410.04190 (2024).
 
 * ArtPropmt
 
-[7] Jiang, Fengqing, Zhangchen Xu, Luyao Niu, Zhen Xiang, Bhaskar Ramasubramanian, Bo Li, and Radha Poovendran. "Artprompt: Ascii art-based jailbreak attacks against aligned llms." In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 15157-15173. 2024.
+[Jiang2024] Jiang, Fengqing, Zhangchen Xu, Luyao Niu, Zhen Xiang, Bhaskar Ramasubramanian, Bo Li, and Radha Poovendran. "Artprompt: Ascii art-based jailbreak attacks against aligned llms." In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 15157-15173. 2024.
 
 * DeepInception
 
-[8] Li, Xuan, Zhanke Zhou, Jianing Zhu, Jiangchao Yao, Tongliang Liu, and Bo Han. "Deepinception: Hypnotize large language model to be jailbreaker." arXiv preprint arXiv:2311.03191 (2023).
+[Li2023] Li, Xuan, Zhanke Zhou, Jianing Zhu, Jiangchao Yao, Tongliang Liu, and Bo Han. "Deepinception: Hypnotize large language model to be jailbreaker." arXiv preprint arXiv:2311.03191 (2023).
 
 * GPT4-Cipher
 
-[9] Shen, Guobin, Dongcheng Zhao, Linghao Feng, Xiang He, Jihang Wang, Sicheng Shen, Haibo Tong et al. "PandaGuard: Systematic Evaluation of LLM Safety in the Era of Jailbreaking Attacks." arXiv preprint arXiv:2505.13862 (2025).
+[Shen2025] Shen, Guobin, Dongcheng Zhao, Linghao Feng, Xiang He, Jihang Wang, Sicheng Shen, Haibo Tong et al. "PandaGuard: Systematic Evaluation of LLM Safety in the Era of Jailbreaking Attacks." arXiv preprint arXiv:2505.13862 (2025).
 
 * SCAV
 
-[10] Xu, Zhihao, Ruixuan Huang, Changyu Chen, and Xiting Wang. "Uncovering safety risks of large language models through concept activation vector." Advances in Neural Information Processing Systems 37 (2024): 116743-116782.
+[Xu2024] Xu, Zhihao, Ruixuan Huang, Changyu Chen, and Xiting Wang. "Uncovering safety risks of large language models through concept activation vector." Advances in Neural Information Processing Systems 37 (2024): 116743-116782.
 
 * RandomSearch
 
-[11] Andriushchenko, Maksym, Francesco Croce, and Nicolas Flammarion. "Jailbreaking leading safety-aligned llms with simple adaptive attacks." arXiv preprint arXiv:2404.02151 (2024).
+[Andriushchenko2024] Andriushchenko, Maksym, Francesco Croce, and Nicolas Flammarion. "Jailbreaking leading safety-aligned llms with simple adaptive attacks." arXiv preprint arXiv:2404.02151 (2024).
 
 * ICA
 
-[12] Wei, Zeming, Yifei Wang, Ang Li, Yichuan Mo, and Yisen Wang. "Jailbreak and guard aligned language models with only few in-context demonstrations." arXiv preprint arXiv:2310.06387 (2023).
+[Wei2023] Wei, Zeming, Yifei Wang, Ang Li, Yichuan Mo, and Yisen Wang. "Jailbreak and guard aligned language models with only few in-context demonstrations." arXiv preprint arXiv:2310.06387 (2023).
 
 * Cold Attack
 
-[13] Guo, Xingang, Fangxu Yu, Huan Zhang, Lianhui Qin, and Bin Hu. "Cold-attack: Jailbreaking llms with stealthiness and controllability." arXiv preprint arXiv:2402.08679 (2024).
+[Guo2024] Guo, Xingang, Fangxu Yu, Huan Zhang, Lianhui Qin, and Bin Hu. "Cold-attack: Jailbreaking llms with stealthiness and controllability." arXiv preprint arXiv:2402.08679 (2024).
 
 * GPTFuzzer
 
-[14] Yu, Jiahao, Xingwei Lin, Zheng Yu, and Xinyu Xing. "Gptfuzzer: Red teaming large language models with auto-generated jailbreak prompts." arXiv preprint arXiv:2309.10253 (2023).
+[Yu2023] Yu, Jiahao, Xingwei Lin, Zheng Yu, and Xinyu Xing. "Gptfuzzer: Red teaming large language models with auto-generated jailbreak prompts." arXiv preprint arXiv:2309.10253 (2023).
 
 * ReNeLLM
 
-[15] Ding, Peng, Jun Kuang, Dan Ma, Xuezhi Cao, Yunsen Xian, Jiajun Chen, and Shujian Huang. "A Wolf in Sheep's Clothing: Generalized Nested Jailbreak Prompts can Fool Large Language Models Easily." arXiv preprint arXiv:2311.08268 (2023).
+[Ding2023] Ding, Peng, Jun Kuang, Dan Ma, Xuezhi Cao, Yunsen Xian, Jiajun Chen, and Shujian Huang. "A Wolf in Sheep's Clothing: Generalized Nested Jailbreak Prompts can Fool Large Language Models Easily." arXiv preprint arXiv:2311.08268 (2023).
 
 * Llama Prompt Guard2
 
@@ -370,4 +391,8 @@ $$Recall = \frac{TP}{TP+FN}$$
 * AEGIS2.0
 
 [Ghosh2025] Ghosh, Shaona, Prasoon Varshney, Makesh Narsimhan Sreedhar, Aishwarya Padmakumar, Traian Rebedea, Jibin Rajan Varghese, and Christopher Parisien. "AEGIS2. 0: A Diverse AI Safety Dataset and Risks Taxonomy for Alignment of LLM Guardrails." arXiv preprint arXiv:2501.09004 (2025).
+
+[Firefly] https://huggingface.co/datasets/YeungNLP/firefly-train-1.1M
+
+[Guo2025] Guo, Daya, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu et al. "Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning." arXiv preprint arXiv:2501.12948 (2025).
 
