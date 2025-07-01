@@ -193,16 +193,20 @@
 
 ### 4.2 模型版本
 
-生成的模型包括：``Base版(XX B)``、``Large版（XX B）``，``Small版(XX B)``等，其中Base版开源供测试对比，``Large版（XX B）``，``Small版(XX B)``作为商用化产品的核心引擎。
+生成的模型包括：
+
+* 商用系列，包括：``Large版（7 B）``、``Base版(3 B)``、，``Small版(0.5 B)``等，作为商用化产品的核心引擎,内置在大模型安全围栏系统内，随产品出售；
+
+* 开源系列，包括：``Base版（3 B）``，``Small版(0.5 B)``，供测试对比和研究使用。
 
 
 | 模型名称   | 模型版本  |  备注  | 下载链接  | 
 | --------  | -----:  | :----:  |  :----:  |
-| QianMo商用 Large版   | XX B |  作为商用产品内核  | |
-| QianMo商用 Small版   | XX B |  作为商用产品内核  | |
-| QianMo开源版    | XX B  |  开源版 | https://huggingface.co/ |
-| QianMo开源版    | XX B  |  开源版 | https://huggingface.co/ |
-| QianMo开源版    | XX B  |  开源版 | https://huggingface.co/ |
+| QianMo商用版 Large  | 7 B   |  作为商用产品内核，后续发布  | |
+| QianMo商用版-Base   | 3 B   |  作为商用产品内核  | |
+| QianMo商用版-Small  | 0.5 B |  作为商用产品内核  | |
+| QianMo开源版-Base   | 3 B   |  开源版 | https://huggingface.co/ |
+| QianMo开源版-Small  | 0.5 B |  开源版 | https://huggingface.co/ |
 
 ## 5. 大模型安全防护效果评测
 
