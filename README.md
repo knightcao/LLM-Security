@@ -254,7 +254,7 @@ $$Recall = \frac{TP}{TP+FN}$$
 | JianWei商用版  | 86M |  Ours, 商用  |
 | &#x2705; JianWei开源版  | 86M |  Ours, 开源  |
 | &#x2705; Llama Prompt Guard 2  | 86M |    |
-| &#x2705; ProtectAI  | unknown |    |
+| &#x2705; ProtectAI  | 86M |    |
 | GradSafe      |   |   |
 | SelfDefense   |   |   |
 | GoalPriority  |   |   |
