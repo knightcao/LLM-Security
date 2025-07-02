@@ -481,7 +481,11 @@ $$Recall = \frac{TP}{TP+FN}$$
 
 [Ghosh2025] Ghosh, Shaona, Prasoon Varshney, Makesh Narsimhan Sreedhar, Aishwarya Padmakumar, Traian Rebedea, Jibin Rajan Varghese, and Christopher Parisien. "AEGIS2. 0: A Diverse AI Safety Dataset and Risks Taxonomy for Alignment of LLM Guardrails." arXiv preprint arXiv:2501.09004 (2025).
 
+* Firefly
+
 [Firefly] https://huggingface.co/datasets/YeungNLP/firefly-train-1.1M
+
+* DeepSeek-R1
 
 [Guo2025] Guo, Daya, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu et al. "Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning." arXiv preprint arXiv:2501.12948 (2025).
 
