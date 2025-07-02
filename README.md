@@ -98,65 +98,65 @@
 <table style="text-align: center;">
   <thead>
    <tr>
-       <td rowspan="2"> </td>   
-       <td colspan="4">假设类 </td>       
-       <td colspan="3">注意力转移类 </td> 
-       <td rowspan="2">权限类 </td>    
+       <td rowspan="2" align="center"> </td>  
+       <td colspan="4" align="center">假设类 </td>       
+       <td colspan="3" align="center">注意力转移类 </td> 
+       <td rowspan="2" align="center">权限类 </td>    
     </tr>
     <tr>
-        <td> 场景假设 </td>  
-        <td> 角色假设 </td>  
-        <td> 科学实验假设 </td>  
-        <td> 责任假设 </td>  
-        <td> 文本续写 </td>  
-        <td> 语序颠倒 </td> 
-        <td> 多语种与翻译 </td> 
+        <td align="center"> 场景假设 </td>  
+        <td align="center"> 角色假设 </td>  
+        <td align="center"> 科学实验假设 </td>  
+        <td align="center"> 责任假设 </td>  
+        <td align="center"> 文本续写 </td>  
+        <td align="center"> 语序颠倒 </td> 
+        <td align="center"> 多语种与翻译 </td> 
     </tr>
   </thead>
   <tbody>
     <tr>
-         <td> TAP </td> 
-        <td> &#x2705; <br> 1526 条数据 </td>  
-        <td> &#x2705; <br> 805 条数据 </td>  
-        <td> &#x2705; <br> 1524 条数据 </td>  
-        <td> &#x2705; <br> 1526 条数据 </td>  
-        <td> &#x2705; <br> 356 条数据 </td>  
-        <td> &#x2705; <br> 1352 条数据</td> 
-        <td> &#x2705; <br> 50 条数据</td> 
-        <td> &#x2705; <br> 747 条数据</td> 
+         <td align="center"> TAP </td> 
+        <td align="center"> &#x2705; <br> 1526 条数据 </td>  
+        <td align="center"> &#x2705; <br> 805 条数据 </td>  
+        <td align="center"> &#x2705; <br> 1524 条数据 </td>  
+        <td align="center"> &#x2705; <br> 1526 条数据 </td>  
+        <td align="center"> &#x2705; <br> 356 条数据 </td>  
+        <td align="center"> &#x2705; <br> 1352 条数据</td> 
+        <td align="center"> &#x2705; <br> 50 条数据</td> 
+        <td align="center"> &#x2705; <br> 747 条数据</td> 
     </tr>
     <tr>
-        <td> AutoDAN </td> 
-        <td> &#x2705;  </td>  
-        <td> &#x2705;  </td>  
-        <td> &#x2705;  </td>  
-        <td> &#x2705;  </td>  
-        <td> &#x2705;  </td>  
-        <td> &#x2705; </td> 
-        <td> &#x2705; </td> 
-        <td> &#x2705; </td> 
+        <td align="center"> AutoDAN </td> 
+        <td align="center"> &#x2705;  </td>  
+        <td align="center"> &#x2705;  </td>  
+        <td align="center"> &#x2705;  </td>  
+        <td align="center"> &#x2705;  </td>  
+        <td align="center"> &#x2705;  </td>  
+        <td align="center"> &#x2705; </td> 
+        <td align="center"> &#x2705; </td> 
+        <td align="center"> &#x2705; </td> 
     </tr>
     <tr>
-        <td> GPTFuzz </td> 
-        <td> &#x23f3;   </td>  
-        <td> &#x23f3;   </td>  
-        <td> &#x23f3;   </td>  
-        <td> &#x23f3;  </td>  
-        <td> &#x23f3;   </td>  
-        <td> &#x23f3;  </td> 
-        <td> &#x23f3; </td> 
-        <td> &#x23f3;  </td> 
+        <td align="center"> GPTFuzz </td> 
+        <td align="center"> &#x23f3;   </td>  
+        <td align="center"> &#x23f3;   </td>  
+        <td align="center"> &#x23f3;   </td>  
+        <td align="center"> &#x23f3;  </td>  
+        <td align="center"> &#x23f3;   </td>  
+        <td align="center"> &#x23f3;  </td> 
+        <td align="center"> &#x23f3; </td> 
+        <td align="center"> &#x23f3;  </td> 
     </tr>
      <tr>
-        <td> GCG </td> 
-        <td> &#x23f3;   </td>  
-        <td> &#x23f3;   </td>  
-        <td> &#x23f3;   </td>  
-        <td> &#x23f3;   </td>  
-        <td> &#x23f3;  </td>  
-        <td> &#x23f3;  </td> 
-        <td> &#x23f3;  </td> 
-        <td> &#x23f3;  </td> 
+        <td align="center"> GCG </td> 
+        <td align="center"> &#x23f3;   </td>  
+        <td align="center"> &#x23f3;   </td>  
+        <td align="center"> &#x23f3;   </td>  
+        <td align="center"> &#x23f3;   </td>  
+        <td align="center"> &#x23f3;  </td>  
+        <td align="center"> &#x23f3;  </td> 
+        <td align="center"> &#x23f3;  </td> 
+        <td align="center"> &#x23f3;  </td> 
     </tr>  
   </tbody>
 </table>
@@ -267,7 +267,7 @@ $$Recall = \frac{TP}{TP+FN}$$
 | --------      | :----: | :----:  |
 | 见微JianWei开源版  | 0.999 |    |
 | Lamma Promote Graud 2  | 0.746 |    |
-| ProtectAI  | 0.7063 |    |
+| ProtectAI  | 0.706 |    |
 
 针对有害样本的分项测试结果如下：
 
