@@ -295,14 +295,14 @@ $$Recall = \frac{TP}{TP+FN}$$
   <tbody>
     <tr>
         <td> 见微JianWei </td> 
-        <td> &#x2705; <br> 0.993 </td>  
-        <td> &#x2705; <br> 0.988 </td>  
-        <td> &#x2705; <br> 0.994 </td>  
-        <td> &#x2705; <br> 0.993 </td>  
-        <td> &#x2705; <br> 0.976 </td>  
-        <td> &#x2705; <br> 1 </td> 
-        <td> &#x2705; <br> 1 </td> 
-        <td> &#x2705; <br> - </td> 
+        <td> 0.993 </td>  
+        <td> 0.988 </td>  
+        <td> 0.994 </td>  
+        <td> 0.993 </td>  
+        <td> 0.976 </td>  
+        <td>  1 </td> 
+        <td>  1 </td> 
+        <td>  - </td> 
     </tr>
     <tr>
         <td> ProtectAI </td> 
