@@ -1,4 +1,4 @@
-# 大模型安全防护围栏
+# 见微大模型安全防护围栏
 
 ## 最新动态
 
@@ -218,7 +218,7 @@
 
 我们利用蒸馏技术，准确率提升了XX%。
 
-* 基于人类强化学习
+* 强化学习
 
 通过RLHF技术，不断生成高质量数据语料，自动化进行筛选和标注。采用RLHF技术，提升了数据数量和质量，将数据规模扩充至XXXXX条。
 
@@ -261,7 +261,77 @@ $$Recall = \frac{TP}{TP+FN}$$
 
 ### 5.3 评测结果
 
-当前对比评测结果如下：
+针对全部样本整体评测结果如下：
+
+| 模型名称     | 准确率 |  备注  |
+| --------      | :----: | :----:  |
+| 见微JianWei开源版  | 0.999 |    |
+| Lamma Promote Graud 2  | 0.746 |    |
+| ProtectAI  | 0.7063 |    |
+
+针对有害样本的分项测试结果如下：
+
+<div style="text-align:center">
+
+<center>
+<table style="text-align: center;">
+  <thead>
+   <tr>
+       <td rowspan="2"> </td>   
+       <td colspan="4">假设类 </td>       
+       <td colspan="3">注意力转移类 </td> 
+       <td rowspan="2">权限类 </td>    
+    </tr>
+    <tr>
+        <td> 场景假设 </td>  
+        <td> 角色假设 </td>  
+        <td> 科学实验假设 </td>  
+        <td> 责任假设 </td>  
+        <td> 文本续写 </td>  
+        <td> 语序颠倒 </td> 
+        <td> 多语种与翻译 </td> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td> 见微JianWei </td> 
+        <td> &#x2705; <br> 0.993 </td>  
+        <td> &#x2705; <br> 0.988 </td>  
+        <td> &#x2705; <br> 0.994 </td>  
+        <td> &#x2705; <br> 0.993 </td>  
+        <td> &#x2705; <br> 0.976 </td>  
+        <td> &#x2705; <br> 1 </td> 
+        <td> &#x2705; <br> 1 </td> 
+        <td> &#x2705; <br> - </td> 
+    </tr>
+    <tr>
+        <td> ProtectAI </td> 
+        <td> 0.002  </td>  
+        <td> 0.003  </td>  
+        <td> 0.001  </td>  
+        <td> 0.003  </td>  
+        <td> 0.078  </td>  
+        <td> 0.237 </td> 
+        <td> 0.451 </td> 
+        <td> - </td> 
+    </tr>
+    <tr>
+        <td> Llama Prompt Guard 2 </td> 
+        <td> 0.026   </td>  
+        <td> 0.198   </td>  
+        <td> 0.014   </td>  
+        <td> 0.069  </td>  
+        <td> 0.132   </td>  
+        <td> 0.230  </td> 
+        <td> 0.415 </td> 
+        <td> -  </td> 
+    </tr>
+  </tbody>
+</table>
+
+</center>
+
+</div>
 
 ![图片](https://github.com/user-attachments/assets/93832388-7e42-47e8-8dc2-6588feeeb924)
 |:--:| 
