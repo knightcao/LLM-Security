@@ -251,8 +251,8 @@ $$Recall = \frac{TP}{TP+FN}$$
 
 | 模型名称     | 模型体量 |  备注  |
 | --------      | :----: | :----:  |
-| JianWei商用版  | 86M |  Ours, 商用  |
-| &#x2705; JianWei开源版  | 86M |  Ours, 开源  |
+| 见微ChangeWay商用版  | 86M |  Ours, 商用  |
+| &#x2705; 见微ChangeWay开源版  | 86M |  Ours, 开源  |
 | &#x2705; Llama Prompt Guard 2  | 86M |    |
 | &#x2705; ProtectAI  | 86M |    |
 | GradSafe      |   |   |
@@ -265,7 +265,7 @@ $$Recall = \frac{TP}{TP+FN}$$
 
 | 模型名称     | 准确率 |  备注  |
 | --------      | :----: | :----:  |
-| 见微JianWei开源版  | 0.999 |    |
+| 见微ChangeWay开源版  | 0.999 |    |
 | Lamma Promote Graud 2  | 0.746 |    |
 | ProtectAI  | 0.706 |    |
 
@@ -294,7 +294,7 @@ $$Recall = \frac{TP}{TP+FN}$$
   </thead>
   <tbody>
     <tr>
-        <td> 见微JianWei </td> 
+        <td> 见微ChangeWay </td> 
         <td> 0.993 </td>  
         <td> 0.988 </td>  
         <td> 0.994 </td>  
