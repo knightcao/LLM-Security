@@ -284,20 +284,9 @@ mDeBERTa-v3<sup>[[He2023]</sup>]([He2023])模型是微软公司2023年提出的�
 
 ### 5.1 评测指标
 
-我们采用业界通行的F1得分（又称平衡F得分）作为综合评价指标。F1得分平衡的精准率和召回率指标。F1得分的定义为：
+机器学习任务通常使用F1得分作为评测指标，我们也采用了F1得分进行评估。
 
-$$F1=2 \times \frac{Precison \times Recall}{Precision + Recall}$$
-
-其中， $$Precision$$ 是精准率， $$Recall$$ 是召回率，定义分别为：
-
-$$Precision = \frac{TP}{TP+FP}$$
-
-$$Recall = \frac{TP}{TP+FN}$$
-
-| -     | 判断为真  |  判断不为真  |
-| --------   | :----:  | :----:  |
-| 事实为真    | TP  |  FN  |
-| 事实不为真  | FP  |  TN  |
+F1 分数是评估模型在二分类任务中预测性能的常用指标，综合考虑了查准率和召回率。F1得分的定义详见文献[F1]。
 
 ### 5.2 评测对比
 
@@ -518,4 +507,9 @@ fka/awesome-chatgpt-prompts： 203条英文数据
 * mDeBERTa-v3
 
 [He2023] He, Pengcheng, Jianfeng Gao, and Weizhu Chen. "DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training with Gradient-Disentangled Embedding Sharing." In The Eleventh International Conference on Learning Representations.
+
+* F1
+
+[F1] https://zhuanlan.zhihu.com/p/481297690
+
 
